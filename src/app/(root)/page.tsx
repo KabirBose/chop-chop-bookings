@@ -4,7 +4,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-fuchsia-300">
         ChopChop Reservations
       </h1>
-      <p>Manage your reservation services with ease!</p>
+      <p>Manage your reservations with ease!</p>
     </div>
   );
 }

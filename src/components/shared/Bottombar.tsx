@@ -8,7 +8,7 @@ const Bottombar = () => {
       {barItems.map((item) => (
         <div className="w-20" key={Math.random()}>
           <Link href={item.address}>
-            <FontAwesomeIcon icon={item.icon} transform="shrink-11" />
+            <FontAwesomeIcon icon={item.icon} transform="shrink-12" />
           </Link>
         </div>
       ))}

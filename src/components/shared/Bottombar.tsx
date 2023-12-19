@@ -1,15 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import { barItems } from "@/lib/barItems";
 
 const Bottombar = () => {
   return (
-    <nav className="justify-center items-center gap-5 bg-slate-800 text-white p-4 flex md:hidden">
+    <nav className="justify-center items-center gap-5 bg-slate-800 text-white p-3 flex md:hidden">
       {barItems.map((item) => (
-        <FontAwesomeIcon
-          icon={item.icon}
-          transform="shrink-10"
-          key={Math.random()}
-        />
+        <div className="w-20" key={Math.random()}>
+          <Link href={item.address}>
+            <FontAwesomeIcon icon={item.icon} transform="shrink-10" />
+          </Link>
+        </div>
       ))}
     </nav>
   );

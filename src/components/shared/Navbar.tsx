@@ -1,13 +1,14 @@
 import Link from "next/link";
+import { barItems } from "@/lib/barItems";
 
 const Navbar = () => {
   return (
     <nav className="justify-center items-center gap-5 bg-slate-800 text-white p-4 hidden md:flex">
-      <Link href={"/"}>Chop Chop</Link>
-      <Link href={"/"}>Bookings</Link>
-      <Link href={"/"}>Inventory</Link>
-      <Link href={"/"}>Tickets</Link>
-      <Link href={"/"}>Finances</Link>
+      {barItems.map((item) => (
+        <Link href={item.address} key={Math.random()}>
+          {item.label}
+        </Link>
+      ))}
     </nav>
   );
 };

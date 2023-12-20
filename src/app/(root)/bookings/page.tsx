@@ -19,7 +19,7 @@ export default function Bookings() {
           Submit
         </button>
       </form>
-      <div className="flex flex-col justify-start items-start gap-5 h-96 w-auto overflow-scroll">
+      <div className="flex flex-col justify-start items-start bg-gray-100 p-3 rounded-md gap-5 h-96 w-auto overflow-scroll">
         <Booking
           fname="Jamal"
           lname="Murray"

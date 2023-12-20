@@ -1,4 +1,5 @@
 import Input from "@/components/form/Input";
+import Booking from "@/components/form/Booking";
 
 export default function Bookings() {
   return (
@@ -18,8 +19,13 @@ export default function Bookings() {
           Submit
         </button>
       </form>
-      <div className="bg-red-200">
-        <h1>Test</h1>
+      <div className="flex flex-col justify-start items-start gap-5 h-96 w-auto overflow-scroll">
+        <Booking
+          fname="Jamal"
+          lname="Murray"
+          number="4166734958"
+          email="jamalmurray@hotmail.com"
+        />
       </div>
     </div>
   );

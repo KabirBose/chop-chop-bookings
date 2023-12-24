@@ -24,8 +24,8 @@ export default function RegisterForm() {
         className="flex justify-center items-center gap-3 flex-col"
       >
         <input
-          className="text-black"
           onChange={(e) => setName(e.target.value)}
+          className="text-black"
           type="text"
           placeholder="Username"
         />

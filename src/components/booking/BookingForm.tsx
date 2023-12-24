@@ -1,17 +1,28 @@
 "use client";
 
-import Input from "./Input";
-
 export default function BookingForm() {
   return (
-    <form
-      className="flex flex-col bg-gray-200 w-80 p-4 gap-5 rounded-md"
-      method="POST"
-    >
-      <Input label="First Name" name="fname" type="text" />
-      <Input label="Last Name" name="lname" type="text" />
-      <Input label="Phone Number" name="number" type="tel" />
-      <Input label="Email" name="email" type="email" />
+    <form className="flex flex-col bg-gray-200 w-80 p-4 gap-5 rounded-md">
+      <input
+        className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        placeholder="First Name"
+        type="text"
+      ></input>
+      <input
+        className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        placeholder="Last Name"
+        type="text"
+      ></input>
+      <input
+        className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        placeholder="Phone Number"
+        type="tel"
+      ></input>
+      <input
+        className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        placeholder="Email"
+        type="email"
+      ></input>
       <button
         className="bg-light-3 p-3 rounded-md bg-gray-300 text-black"
         type="submit"

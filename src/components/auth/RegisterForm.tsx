@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function RegisterForm() {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,7 +11,7 @@ export default function RegisterForm() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!username || !email || !password) {
       setError("Please fill all fields");
       return;
     }
@@ -22,7 +22,7 @@ export default function RegisterForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
 
       // resets the form if fields are valid
@@ -44,7 +44,7 @@ export default function RegisterForm() {
         className="flex justify-center items-center gap-3 flex-col"
       >
         <input
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           className="text-black"
           type="text"
           placeholder="Username"

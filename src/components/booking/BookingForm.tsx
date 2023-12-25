@@ -5,21 +5,25 @@ export default function BookingForm() {
     <form className="flex flex-col bg-gray-200 w-80 p-4 gap-5 rounded-md">
       <input
         className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        name="fname"
         placeholder="First Name"
         type="text"
       ></input>
       <input
         className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        name="lname"
         placeholder="Last Name"
         type="text"
       ></input>
       <input
         className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        name="number"
         placeholder="Phone Number"
         type="tel"
       ></input>
       <input
         className="rounded-sm px-2 py-1 bg-gray-300 text-black focus:outline-none"
+        name="email"
         placeholder="Email"
         type="email"
       ></input>

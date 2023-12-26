@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const router = useRouter();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -30,9 +33,9 @@ export default function RegisterForm() {
         const form = e.target;
         form.reset();
         console.log("User registered successfully!");
+        router.push("/login");
       } else {
         console.log("User registration failed");
-
         // Since the response was not 'ok', we get the error message from the response
         const errorData = await res.json();
         // Display the error message to the user

@@ -1,5 +1,3 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-
 import {
   faHouseChimney,
   faBookOpen,

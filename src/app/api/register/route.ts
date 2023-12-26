@@ -12,7 +12,10 @@ export async function POST(req: Request) {
     await User.create({ username, email, password: hashedPass });
 
     return NextResponse.json({ message: "User registered" }, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
+    if (error.code === 11000) {
+      console.log("Email or username already exists!");
+    }
     return NextResponse.json(
       { message: "Error occurred on registration" },
       { status: 500 }

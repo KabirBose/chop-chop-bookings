@@ -14,7 +14,7 @@ export default function RegisterForm() {
     if (!username || !email || !password) {
       setError("Please fill all fields");
       return;
-    }
+    } else setError("");
 
     try {
       const res = await fetch("/api/register", {

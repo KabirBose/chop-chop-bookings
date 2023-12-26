@@ -13,12 +13,11 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "User registered" }, { status: 201 });
   } catch (error: any) {
+    let errorMessage = "An unexpected error occurred during registration.";
+
     if (error.code === 11000) {
-      console.log("Email or username already exists!");
+      errorMessage = "Email or username already exists!";
     }
-    return NextResponse.json(
-      { message: "Error occurred on registration" },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
 }

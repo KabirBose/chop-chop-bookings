@@ -29,8 +29,14 @@ export default function RegisterForm() {
       if (res.ok) {
         const form = e.target;
         form.reset();
+        console.log("User registered successfully!");
       } else {
         console.log("User registration failed");
+
+        // Since the response was not 'ok', we get the error message from the response
+        const errorData = await res.json();
+        // Display the error message to the user
+        setError(errorData.message);
       }
     } catch (error) {
       console.log("Error during registration", error);

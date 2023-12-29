@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/shared/Navbar";
 import Bottombar from "@/components/shared/Bottombar";
+import { AuthProvider } from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <AuthProvider>{children}</AuthProvider>
         <Bottombar />
       </body>
     </html>

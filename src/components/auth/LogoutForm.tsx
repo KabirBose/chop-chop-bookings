@@ -6,9 +6,9 @@ export default function LogoutForm() {
   console.log(useSession());
 
   return (
-    <form>
+    <div>
       <p>Are you sure you want to logout?</p>
-      <button onClick={() => signOut}>Logout</button>
-    </form>
+      <button onClick={() => signOut()}>Logout</button>
+    </div>
   );
 }

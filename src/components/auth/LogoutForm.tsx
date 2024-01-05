@@ -1,10 +1,9 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 export default function LogoutForm() {
-  console.log(useSession());
-
+  // signout user when button is clicked
   return (
     <div>
       <p>Are you sure you want to logout?</p>

@@ -7,26 +7,33 @@ import bcrypt from "bcryptjs";
 
 const authOptions = {
   providers: [
+    // use credentials provider
     CredentialsProvider({
       name: "credentials",
       credentials: {},
 
       async authorize(credentials) {
+        // get the email and password entered in the login form
         const { email, password }: any = credentials;
         try {
+          // connected to the DB and find the email that was entered in the login form
           await connectMongoDB();
           const user = await User.findOne({ email });
 
+          // if user does not exist return null
           if (!user) {
             return null;
           }
 
+          // otherwise check if password from DB matches password from login form
           const passwordsMatch = await bcrypt.compare(password, user.password);
 
+          // if no match then return null
           if (!passwordsMatch) {
             return null;
           }
 
+          //if match then authorize user
           return user;
         } catch (error) {
           console.log("Error: ", error);

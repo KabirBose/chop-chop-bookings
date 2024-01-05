@@ -14,12 +14,14 @@ export default function RegisterForm() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    // if username, email, or pass fields are empty then set error
     if (!username || !email || !password) {
       setError("Please fill all fields");
       return;
     } else setError("");
 
     try {
+      // post the form data to the database (username, email, password)
       const res = await fetch("/api/register", {
         method: "POST",
         headers: {
@@ -28,17 +30,19 @@ export default function RegisterForm() {
         body: JSON.stringify({ username, email, password }),
       });
 
-      // resets the form if fields are valid
+      // resets the form if fields are valid and redirects user to the "/login" page
       if (res.ok) {
         const form = e.target;
         form.reset();
         console.log("User registered successfully!");
         router.push("/login");
+
+        //
       } else {
-        console.log("User registration failed");
-        // Since the response was not 'ok', we get the error message from the response
+        // if the response was not 'ok', we get the error message from the response
         const errorData = await res.json();
-        // Display the error message to the user
+
+        // display the error message to the user
         setError(errorData.message);
       }
     } catch (error) {

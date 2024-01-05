@@ -14,17 +14,23 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
+      // use "credentials" provider and check against email and password in DB. do not redirect to another page
       const res: any = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
 
+      // if error, set error
       if (res.error) {
         setError("Invalid email or password");
         return;
       }
+
+      // if success, redirect to "/bookings"
       router.replace("/bookings");
+
+      // error
     } catch (error) {
       console.log(error);
     }

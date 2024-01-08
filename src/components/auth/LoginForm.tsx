@@ -44,19 +44,21 @@ export default function LoginForm() {
       >
         <input
           onChange={(e) => setEmail(e.target.value)}
-          className="text-black"
+          className="text-black p-1 rounded-md"
           type="email"
           placeholder="Email"
           name="email"
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
-          className="text-black"
+          className="text-black p-1 rounded-md"
           type="password"
           placeholder="Password"
           name="password"
         />
-        <button type="submit">Login</button>
+        <button className="bg-fuchsia-400 p-2 rounded-md w-full" type="submit">
+          Login
+        </button>
       </form>
       {error && <p>{error}</p>}
     </div>

@@ -58,26 +58,28 @@ export default function RegisterForm() {
       >
         <input
           onChange={(e) => setUsername(e.target.value)}
-          className="text-black"
+          className="text-black p-1 rounded-md"
           type="text"
           placeholder="Username"
           name="username"
         />
         <input
           onChange={(e) => setEmail(e.target.value)}
-          className="text-black"
+          className="text-black p-1 rounded-md"
           type="email"
           placeholder="Email"
           name="email"
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
-          className="text-black"
+          className="text-black p-1 rounded-md"
           type="password"
           placeholder="Password"
           name="password"
         />
-        <button type="submit">Register</button>
+        <button className="bg-fuchsia-400 p-2 rounded-md w-full" type="submit">
+          Register
+        </button>
       </form>
       {error && <p>{error}</p>}
     </div>
